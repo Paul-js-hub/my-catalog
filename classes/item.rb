@@ -10,21 +10,21 @@ class Item
 
   def genre=(genre)
     @genre = genre
-    genre.add_item(self)
+    genre.items << self unless genre.items.include?(self)
   end
 
   def author=(author)
     @author = genre
-    author.add_item(self)
+    author.items << self unless author.items.include?(self)
   end
 
   def source=(source)
     @source = source
-    source.add_item(self)
+    source.items << self unless source.items.include?(self)
   end
 
   def label=(label)
     @label = label
-    label.add_item(self)
+    label.items << self unless label.items.include?(self)
   end
 end
