@@ -38,5 +38,6 @@ class App
   def preserve_data
     preserve_books
     preserve_music
+    preserve_games
   end
 end
