@@ -35,7 +35,7 @@ module BookAndLabel
 
     new_label.items.each do |item|
       @books << { :title.to_s => item.label.title, :publisher.to_s => item.publisher,
-                  :publish_date.to_s => item.publish_date,
+                  :publish_date.to_s => item.publish_date, 
                   :cover_state.to_s => item.cover_state }
     end
 
