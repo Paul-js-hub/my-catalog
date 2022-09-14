@@ -13,7 +13,7 @@ class Main
       action = gets.chomp.to_i
       @app.handle_enter_action(action)
     end
-    @app.preserve_data
+    # @app.preserve_data
     puts 'Thank you for using this application'
   end
 
@@ -26,7 +26,7 @@ class Main
     puts '6-    List all authors'
     puts '7-    Add a book'
     puts '8-    Add a music album'
-    puts '9-   Add a game'
+    puts '9-    Add a game'
     puts '10-   Exit'
   end
 end

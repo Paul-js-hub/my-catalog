@@ -1,6 +1,11 @@
+require './classes/book_label_module'
+
 class App
+  include BookAndLabel
   def initialize
     @music = []
+    @books = []
+    @label = []
   end
 
   def handle_enter_action(action)
@@ -35,9 +40,9 @@ class App
     end
   end
 
-  def preserve_data
-    preserve_books
-    preserve_music
-    preserve_games
-  end
+  # def preserve_data
+  #   preserve_books
+  #   preserve_music
+  #   preserve_games
+  # end
 end
