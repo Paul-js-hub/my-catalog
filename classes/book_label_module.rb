@@ -42,5 +42,12 @@ module BookAndLabel
       
     end
 
+    def list_all_books
+      puts 'No list to display' unless @books.length.positive?
+      @books.each_with_index do |book,index|        
+        puts "#{index+1}) Title: #{book['title']}, Publisher: #{book['publisher']}, Publish Date: #{book['publish_date']}, Cover State: #{book['cover_state']}"
+      end
+    end
+
     
   end
