@@ -1,7 +1,7 @@
 require './classes/book_label_module'
 
 class App
-include BookAndLabel
+  include BookAndLabel
   def initialize
     @music = []
     @books = []
