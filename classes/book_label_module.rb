@@ -49,5 +49,12 @@ module BookAndLabel
       end
     end
 
-    
+    def list_all_labels
+      puts 'No list to display' unless @label.length.positive?
+      @label.each_with_index do |label, index|        
+       puts "#{index+1}) #{label['title']}"
+       
+      end
+     
+    end
   end
