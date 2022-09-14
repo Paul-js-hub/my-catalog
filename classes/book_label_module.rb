@@ -24,4 +24,23 @@ module BookAndLabel
     end
     [title, color, date, publisher, cover_state]
   end
+
+    def add_book
+      title, color, date, publisher, cover_state = get_details      
+      new_book = Book.new(date, publisher, cover_state)      
+      new_label = Label.new(title, color)
+      new_label.add_item(new_book)
+
+      new_label.items.each do |item|
+        @books << {:title.to_s => item.label.title, :publisher.to_s => item.publisher, 
+        :publish_date.to_s => item.publish_date, :cover_state.to_s => item.cover_state}
+      end
+      
+      @label << {:title.to_s => new_label.title, :color.to_s => new_label.color}
+      
+      puts "Book created successfully"
+      
+    end
+
+    
   end
