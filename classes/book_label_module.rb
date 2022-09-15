@@ -1,6 +1,7 @@
 require_relative 'book'
 require_relative 'label'
-require 'pry'
+require './storage/save_book_label'
+
 
 module BookAndLabel
   def extract_details
@@ -38,9 +39,9 @@ module BookAndLabel
                   :publish_date.to_s => item.publish_date,
                   :cover_state.to_s => item.cover_state }
     end
-
+    save_book(@books)
     @label << { :title.to_s => new_label.title, :color.to_s => new_label.color }
-
+    save_label(@label)
     puts 'Book created successfully'
   end
 
