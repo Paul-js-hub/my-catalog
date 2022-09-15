@@ -1,13 +1,20 @@
 require './classes/book_label_module'
 require './storage/save_book_label'
+require_relative './modules/music_module'
+require_relative './modules/genre_module'
+require_relative './classes/music_album'
 
 class App
   include BookAndLabel
-  def initialize
-    @music = []
-    @books = load_books
-    @label = load_label
-  end
+  include MusicModule
+  include GenreModule
+  
+def initialize
+  @books = load_books
+  @label = load_label
+  @music = load_music
+  @genres = load_genre
+end
 
   def handle_enter_action(action)
     case action
@@ -29,7 +36,7 @@ class App
     when 1
       list_all_books
     when 2
-      list_music - albums
+      list_music_albums
     when 3
       list_all_games
     when 4
@@ -41,9 +48,36 @@ class App
     end
   end
 
-  # def preserve_data
-  #   preserve_books
-  #   preserve_music
-  #   preserve_games
-  # end
+  def add_music_album
+    puts 'Please add a music album name'
+    name = gets.chomp
+
+    puts 'Please enter the publish date in the format [yyyy-mm-dd]'
+    publish_date = gets.chomp
+
+    puts 'Is it on spotify'
+    on_spotify = gets.chomp.downcase == 'y' || false
+
+    @genres << Genre.new(name)
+    @music << MusicAlbum.new(name, publish_date, on_spotify)
+    puts 'Music added successfully'
+  end
+
+  def list_music_albums
+    @music.each do |item|
+      puts "Name: #{item.name}, Publish Date: #{item.publish_date}, spotify: #{item.on_spotify}"
+    end
+  end
+
+  def list_all_genres
+    @genres.each do |genre|
+      puts 'Genre'
+      puts "Name: #{genre.name}"
+    end
+  end
+
+  def save_data
+    save_music
+    save_genre
+  end
 end
