@@ -8,14 +8,14 @@ module GenreModule
         Genre.new(genre['name'])
       end
     else
-        []
+      []
     end
   end
 
   def save_genre
     items = []
     @genres.each do |genre|
-        items.push({name: genre.name})
+      items.push({ name: genre.name })
     end
     open('./json_file/genre.json', 'w') { |f| f << JSON.generate(items) }
   end

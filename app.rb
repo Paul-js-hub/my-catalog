@@ -55,7 +55,7 @@ class App
 
     puts 'Is it on spotify'
     on_spotify = gets.chomp.downcase == 'y' || false
-    
+
     @genres << Genre.new(name)
     @music << MusicAlbum.new(name, publish_date, on_spotify)
     puts 'Music added successfully'
@@ -69,7 +69,7 @@ class App
 
   def list_all_genres
     @genres.each do |genre|
-      puts "Genre"
+      puts 'Genre'
       puts "Name: #{genre.name}"
     end
   end
