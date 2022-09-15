@@ -8,13 +8,13 @@ class App
   include BookAndLabel
   include MusicModule
   include GenreModule
-  
-def initialize
-  @books = load_books
-  @label = load_label
-  @music = load_music
-  @genres = load_genre
-end
+
+  def initialize
+    @books = load_books
+    @label = load_label
+    @music = load_music
+    @genres = load_genre
+  end
 
   def handle_enter_action(action)
     case action
