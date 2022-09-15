@@ -28,7 +28,7 @@ To get a local copy up and running follow these simple example steps.
 
 **Install Ruby**
 ### Usage
-**Run this command "ruby main.rb" on your terminal
+**Run this command "ruby main.rb" on your terminal**
 
 ## Authors
 
