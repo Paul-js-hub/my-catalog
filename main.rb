@@ -13,7 +13,7 @@ class Main
       action = gets.chomp.to_i
       @app.handle_enter_action(action)
     end
-    # @app.preserve_data
+    @app.save_data
     puts 'Thank you for using this application'
   end
 
