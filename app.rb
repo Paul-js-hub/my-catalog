@@ -1,4 +1,5 @@
 require './classes/book_label_module'
+require './storage/save_book_label'
 require_relative './modules/music_module'
 require_relative './modules/genre_module'
 require_relative './classes/music_album'
@@ -7,12 +8,13 @@ class App
   include BookAndLabel
   include MusicModule
   include GenreModule
-  def initialize
-    @music = load_music
-    @books = []
-    @label = []
-    @genres = load_genre
-  end
+  
+def initialize
+  @books = load_books
+  @label = load_label
+  @music = load_music
+  @genres = load_genre
+end
 
   def handle_enter_action(action)
     case action

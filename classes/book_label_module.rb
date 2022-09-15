@@ -1,14 +1,14 @@
 require_relative 'book'
 require_relative 'label'
-require 'pry'
+require './storage/save_book_label'
 
 module BookAndLabel
   def extract_details
-    puts 'Enter the Label title'
+    puts 'Enter the Book/Label title'
     title = gets.chomp.capitalize
     puts 'Enter the color of the book'
     color = gets.chomp
-    puts 'Enter date it was published'
+    puts 'Enter date it was published(format: DD/MM/YY)'
     date = gets.chomp
     puts "Enter publisher's name"
     publisher = gets.chomp.capitalize
@@ -29,7 +29,7 @@ module BookAndLabel
 
   def add_book
     title, color, date, publisher, cover_state = extract_details
-    new_book = Book.new(date, publisher, cover_state)
+    new_book = Book.new(Date.parse(date), publisher, cover_state)
     new_label = Label.new(title, color)
     new_label.add_item(new_book)
 
@@ -38,9 +38,9 @@ module BookAndLabel
                   :publish_date.to_s => item.publish_date,
                   :cover_state.to_s => item.cover_state }
     end
-
+    save_book(@books)
     @label << { :title.to_s => new_label.title, :color.to_s => new_label.color }
-
+    save_label(@label)
     puts 'Book created successfully'
   end
 
