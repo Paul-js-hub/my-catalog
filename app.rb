@@ -1,11 +1,12 @@
 require './classes/book_label_module'
+require './storage/save_book_label'
 
 class App
   include BookAndLabel
   def initialize
     @music = []
-    @books = []
-    @label = []
+    @books = load_books
+    @label = load_label
   end
 
   def handle_enter_action(action)
