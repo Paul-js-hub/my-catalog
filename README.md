@@ -1,8 +1,12 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+[![](https://img.shields.io/badge/Microverse-Dozie%20Udeagha-blueviolet)](https://github.com/udeaghad)
 
-# Project Name
+[![](https://img.shields.io/badge/Microverse-Hesbon%20Onchera-blue)](https://github.com/Paul-js-hub)
 
-> Description the project.
+[![](https://img.shields.io/badge/Microverse-Kell-cyan)](https://github.com/CrystallineButterfly)
+
+# Catalog of my things
+
+> In this project, we created a console app that will help user to keep a record of different types of things they own: books, music albums, movies, and games. Everything was based on the UML class diagram presented below. The data will be stored in JSON files but we also prepared a database with tables structure analogical to our program's class structure.
 
 
 ## Built With

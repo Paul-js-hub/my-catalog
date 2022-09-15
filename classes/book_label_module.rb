@@ -2,7 +2,6 @@ require_relative 'book'
 require_relative 'label'
 require './storage/save_book_label'
 
-
 module BookAndLabel
   def extract_details
     puts 'Enter the Book/Label title'
