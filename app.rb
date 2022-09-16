@@ -114,7 +114,4 @@ class App
     @author << Author.new(first_name, last_name)
     puts 'Game added successfully'
   end
-
-
-  
 end

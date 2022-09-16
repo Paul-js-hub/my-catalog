@@ -5,6 +5,7 @@ class Author < Item
   attr_reader :id
 
   def initialize(first_name, last_name)
+    super()
     @id = Random.rand(1..1000)
     @first_name = first_name
     @last_name = last_name
