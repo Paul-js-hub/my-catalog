@@ -1,12 +1,11 @@
 class Game
-  attr_accessor :multiplayer, :last_played_at, :date
+  attr_accessor :multiplayer, :last_played_at
   attr_reader :id, :archieved
 
-  def initialize(multiplayer, _last_played_at)
-    super(date)
+  def initialize(multiplayer, last_played_at)
     @id = Random.rand(1..1000)
     @multiplayer = multiplayer
-    @last_played_at = date
+    @last_played_at = last_played_at
   end
 
   def can_be_archived?
