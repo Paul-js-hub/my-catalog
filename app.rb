@@ -115,6 +115,8 @@ class App
 
     @game << Game.new(multiplayer, last_played_at)
     @author << Author.new(first_name, last_name, date)
+    save_game(@game) 
+    save_author(@author)
     puts 'Game added successfully'
   end
 end
