@@ -1,5 +1,5 @@
 require 'json'
-require './classes/game_author' 
+require './classes/game_author'
 require 'pry'
 
 module AuthorModule

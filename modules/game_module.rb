@@ -6,7 +6,7 @@ module GameModule
   def load_game
     if File.exist?('./json_file/game.json') && File.read('./json_file/game.json') != ''
       JSON.parse(File.read('./json_file/game.json')).map do |game|
-        Game.new(game['multiplayer'] , game['last_played_at'])
+        Game.new(game['multiplayer'], game['last_played_at'])
       end
     else
       []
