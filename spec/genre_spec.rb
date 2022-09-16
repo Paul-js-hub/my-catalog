@@ -8,7 +8,7 @@ describe Genre do
     end
 
     it 'should add the input item to the collection of items' do
-      item = Item.new(publish_date: Time.new(2022 - 0o3 - 0o3))
+      item = Item.new('2022-07-09')
       genre1.add_item(item)
       expect(genre1.items.length).to eq 1
     end
