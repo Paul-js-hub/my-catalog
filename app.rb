@@ -1,5 +1,7 @@
 require './classes/book_label_module'
 require './storage/save_book_label'
+require './modules/author_module'
+require './modules/game_module'
 require_relative './modules/music_module'
 require_relative './modules/genre_module'
 require_relative './classes/music_album'
@@ -10,14 +12,16 @@ class App
   include BookAndLabel
   include MusicModule
   include GenreModule
+  include GameModule
+  include AuthorModule
 
   def initialize
     @books = load_books
     @label = load_label
     @music = load_music
     @genres = load_genre
-    @game = []
-    @author = []
+    @game = load_game
+    @author = load_author
   end
 
   def handle_enter_action(action)
@@ -83,6 +87,8 @@ class App
   def save_data
     save_music
     save_genre
+    save_author
+    save_game
   end
 
   def list_all_games
@@ -115,6 +121,7 @@ class App
 
     @game << Game.new(multiplayer, last_played_at)
     @author << Author.new(first_name, last_name, date)
+
     puts 'Game added successfully'
   end
 end

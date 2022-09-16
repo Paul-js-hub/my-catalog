@@ -1,3 +1,19 @@
+CREATE TABLE author (
+    id INT NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    publish_date DATE NOT NULL,
+    archived BOOLEAN NOT NULL DEFAULT FALSE,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE game (
+    id INT NOT NULL AUTO_INCREMENT,
+    multiplayer BOOLEAN NOT NULL,
+    last_played_at DATE NOT NULL,
+    PRIMARY KEY (id)
+);
+
 CREATE TABLE genres (
     id  INT GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(100),
