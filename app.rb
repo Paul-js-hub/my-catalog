@@ -110,8 +110,11 @@ class App
     puts 'Please enter the last played date in the format [yyyy-mm-dd]'
     last_played_at = gets.chomp
 
+    puts 'Please add the date published'
+    date = gets.chomp
+
     @game << Game.new(multiplayer, last_played_at)
-    @author << Author.new(first_name, last_name)
+    @author << Author.new(first_name, last_name, date)
     puts 'Game added successfully'
   end
 end
